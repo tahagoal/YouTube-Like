@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation, HostListener} from '@angular/core';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
 @Component({
@@ -9,11 +9,29 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 })
 export class AppMain {
 	show_filters:boolean = false;
+	show_loading:boolean = false;
 	upload_variable:string = '';
 	type_variable:string = '';
 	sort_variable:string = 're';
 
 	constructor(private slimLoadingBarService: SlimLoadingBarService) { }
+
+	@HostListener("window:scroll", [])
+	  onWindowScroll() {
+	  	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+	  		this.reach_bottom();
+	    }
+	}
+
+	reach_bottom(){
+		this.show_loading = true;
+		// for(let i = 0; i < 12; ++i) {
+		// }
+
+		setTimeout(() => {
+			this.show_loading = false;
+	    }, 500);
+	}
 
 	ngOnInit(){
 		this.startLoading();
