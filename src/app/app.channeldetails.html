@@ -76,65 +76,22 @@
       <h5 style="color:#cc181e;"><i class="fa fa-youtube-play" style="font-size: 40px; vertical-align: middle;" aria-hidden="true"></i> SUSBCRIBE <span style="color: gray;">23,993</span></h5>
     </div>
   </div>
-  <div class="row mt-20 display_row_imco bg-white padding_cont" style="padding-left: 20px;">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-  <div class="row mt-20 display_row_imco bg-white padding_cont" style="padding-left: 20px;">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
+
+
+  <div class="bg-white row" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="mt-20 col-xs-12 display_row_imco bg-white" *ngFor="let item of search_result">
+      <div class="image_view" routerLink="/video" *ngIf = "item.video">
+          <img src="{{item.img}}">
+          <span class="timing_img">2:02</span>
+        </div>
+        <div class="content_view" style="width: 61%;">
+          <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
+          <h3>{{item.title}}</h3>
+          <p><small>{{item.tiny}}</small></p>
+          <p>{{item.paragraph}}</p>
+        </div>
     </div>
   </div>
-  <div class="row mt-20 display_row_imco bg-white padding_cont" style="padding-left: 20px;">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-  <div class="row mt-20 display_row_imco bg-white padding_cont" style="padding-left: 20px;">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-  <div class="row mt-20 display_row_imco bg-white padding_cont" style="padding-left: 20px;">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
+  <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="60" *ngIf="show_loading" class="center"> 
 </div>
 <ng2-slim-loading-bar></ng2-slim-loading-bar>

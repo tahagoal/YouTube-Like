@@ -1,7 +1,7 @@
 <nav class="navbar shadow_nav navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header ml-70">
-      <div style="height: 35px; width: 90px; margin-top: 7px;">
+    <div class="navbar-header">
+      <div class="for_desk" style="height: 35px; width: 90px; margin-top: 7px;">
         <svg viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope ytd-topbar-logo-renderer" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet" class="style-scope ytd-topbar-logo-renderer">
           <g class="style-scope ytd-topbar-logo-renderer">
             <path fill="#FF0000" d="M63,14.87c-0.72-2.7-2.85-4.83-5.56-5.56C52.54,8,32.88,8,32.88,8S13.23,8,8.32,9.31
@@ -45,9 +45,14 @@
           </g>
         </g></svg>
       </div>
+      <div class="for_mobile" style="height: 35px; margin-top: 10px;">
+        <i class="fa fa-youtube-play" aria-hidden="true" style="color: white; font-size: 30px;"></i>
+        <h4 style="display: -webkit-inline-box; color: white; vertical-align: super; margin: 0 auto;">YouTube</h4>
+        <i class="fa fa-search fl-right mr-20 mt-5" aria-hidden="true" style="color: white; font-size: 20px;"></i>
+      </div>
     </div>
-    <form class="navbar-form navbar-left ml-50">
-      <div class="input-group" style="width: 200%">
+    <form class="navbar-form for_desk navbar-left ml-50">
+      <div class="input-group search_input">
         <input type="text" class="form-control" placeholder="spongebob">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit">
@@ -113,65 +118,43 @@
       </div>
     </div>
   </div>
-  <div class="row mt-20 ml-10 display_row_imco">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
+
+  <div class="row mt-20 ml-10 display_row_imco"  *ngFor="let item of search_result">
+    <div class="image_view" routerLink="/video" *ngIf = "item.video">
+      <img src="{{item.img}}">
       <span class="timing_img">2:02</span>
     </div>
+    <div class="image_view" routerLink="/channel" *ngIf = "item.channel">
+      <div class="center channel_pp_search">
+        <img width="120" height="120" src="{{item.img}}">
+      </div>
+    </div>
+    <div class="image_view" *ngIf = "item.playlist">
+      <img src="{{item.img}}">
+      <span class="timing_img_playlist">
+        <p class="mt-30" style="font-size: 20px"><b>37</b></p>
+        <p class="mt-5" style="color: white;">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 40%; height: 100%;">
+          <g fill="white" class="style-scope yt-icon">
+            <path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z" class="style-scope yt-icon"></path>
+            </g>
+          </svg>
+        </p>
+      </span>
+      <div class="img_hover">
+        <h4 class="mt-50 center" style="color: white">PLAY ALL</h4>
+      </div>
+    </div>
     <div class="content_view">
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
+      <h3>{{item.title}}</h3>
+      <p><small>{{item.tiny}}</small></p>
+      <p>{{item.paragraph}}</p>
+    </div>
+    <div class="channel_button" *ngIf ="item.channel">
+      <button class="btn btn-danger btn-lg"> Subscribe <small><b>27K</b></small></button>
     </div>
   </div>
 
-  <div class="row mt-20 ml-10 display_row_imco">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-
-  <div class="row mt-20 ml-10 display_row_imco">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-
-  <div class="row mt-20 ml-10 display_row_imco">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-
-  <div class="row mt-20 ml-10 display_row_imco">
-    <div class="image_view">
-      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-      <span class="timing_img">2:02</span>
-    </div>
-    <div class="content_view">
-      <h3>Ay kalam kda</h3>
-      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-    </div>
-  </div>
-  <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="35" *ngIf="show_loading" class="center">  
+  <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="60" *ngIf="show_loading" class="center"> 
 </div>
 <ng2-slim-loading-bar></ng2-slim-loading-bar>

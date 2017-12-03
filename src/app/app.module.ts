@@ -11,7 +11,11 @@ import { AppChannel } from './app.channeldetails';
 const appRoutes: Routes = [
   { path: 'video', component: AppVideo},
   { path: 'channel', component: AppChannel},
-  { path: 'main', component: AppMain}
+  { path: 'main', component: AppMain},
+  { path: '**',
+    redirectTo: 'main',
+    pathMatch: 'full'
+  }
 ];
 
 

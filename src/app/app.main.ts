@@ -13,28 +13,314 @@ export class AppMain {
 	upload_variable:string = '';
 	type_variable:string = '';
 	sort_variable:string = 're';
+	search_result = [];
+	counter:number = 0;
+
+	all_search_result = [
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop SquarePants",
+			"tiny": "149 Videos",
+			"paragraph" : "23,858 subscribers",
+			"video" : false,
+			"channel" : true,
+			"playlist" : false,
+			"img" : "https://yt3.ggpht.com/-zJiJ9QoJYLw/AAAAAAAAAAI/AAAAAAAAAAA/I3wYQ3CsM7Y/s176-c-k-no-mo-rj-c0xffffff/photo.jpg"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : false,
+			"channel" : false,
+			"playlist" : true,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : false,
+			"channel" : false,
+			"playlist" : true,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		},
+		{
+			"title": "Spongepop In Real Life Ep2",
+			"tiny": "JChaseFilms • 54M views • 1 year ago",
+			"paragraph" : "Welcome to SpongeBob's Place where you can eat all the Krabby Patties you want! If you love Nickelodeon, hit the subscribe",
+			"video" : true,
+			"channel" : false,
+			"playlist" : false,
+			"img" : "https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog"
+		}
+	]
 
 	constructor(private slimLoadingBarService: SlimLoadingBarService) { }
 
 	@HostListener("window:scroll", [])
 	  onWindowScroll() {
 	  	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-	  		this.reach_bottom();
+	  		if(this.counter < this.all_search_result.length){
+				this.show_loading = true;
+		  		setTimeout(() => {
+		  			this.reach_bottom();
+					this.show_loading = false;
+			    }, 1000);
+		  	}
 	    }
 	}
 
 	reach_bottom(){
-		this.show_loading = true;
-		// for(let i = 0; i < 12; ++i) {
-		// }
-
-		setTimeout(() => {
-			this.show_loading = false;
-	    }, 500);
+		if(this.counter < this.all_search_result.length){
+			setTimeout(() => {
+			for(let i = this.counter; i < this.counter+10 ; i++){
+				this.search_result[i] = this.all_search_result[i];
+			}
+				this.counter = this.counter+10;
+		    }, 100);
+		}
 	}
 
 	ngOnInit(){
 		this.startLoading();
+		for(let i = 0; i<10 ; i++){
+			this.search_result[i] = this.all_search_result[i];
+		}
+		this.counter = 10;
 	}
 
 	ngAfterContentInit() {

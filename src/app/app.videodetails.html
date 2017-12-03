@@ -116,18 +116,45 @@
 	  			</div>
 	  		</div>
   		</div>
-  		<div class="row mt-20 ml-10 mr-10 display_row_imco">
-		    <div class="image_view">
-		      <img src="https://i.ytimg.com/vi/Q-W1kj4vHRk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB-gN9uhutpe9jSjBYGj4h0IgMVog">
-		      <span class="timing_img">2:02</span>
-		    </div>
-		    <div class="content_view">
-		      <h3>Ay kalam kda</h3>
-		      <p><small>Jasdjkahsd . 65views . 1 year ago</small></p>
-		      <p>kjldfshlkajsdhfkajsdfn akdms,nv  askdlfjalksdf jalksdjf aklsdfj kaldsjf a</p>
-		    </div>
-		</div>
+
+  		<div class="row mt-20 ml-10 display_row_imco"  *ngFor="let item of search_result">
+        <div class="image_view" routerLink="/video" *ngIf = "item.video">
+          <img src="{{item.img}}">
+          <span class="timing_img">2:02</span>
+        </div>
+        <div class="image_view" routerLink="/channel" *ngIf = "item.channel">
+          <div class="center channel_pp_search">
+            <img width="120" height="120" src="{{item.img}}">
+          </div>
+        </div>
+        <div class="image_view" *ngIf = "item.playlist">
+          <img src="{{item.img}}">
+          <span class="timing_img_playlist">
+            <p class="mt-30" style="font-size: 20px"><b>37</b></p>
+            <p class="mt-5" style="color: white;">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 40%; height: 100%;">
+              <g fill="white" class="style-scope yt-icon">
+                <path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z" class="style-scope yt-icon"></path>
+                </g>
+              </svg>
+            </p>
+          </span>
+          <div class="img_hover">
+            <h4 class="mt-50 center" style="color: white">PLAY ALL</h4>
+          </div>
+        </div>
+        <div class="content_view" style="width: 61%;">
+          <h3>{{item.title}}</h3>
+          <p><small>{{item.tiny}}</small></p>
+          <p>{{item.paragraph}}</p>
+        </div>
+        <div class="channel_button" *ngIf ="item.channel">
+          <button class="btn btn-danger btn-lg"> Subscribe <small><b>27K</b></small></button>
+        </div>
+      </div>
+
   	</div>
   </div>
+  <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="60" *ngIf="show_loading" class="center"> 
 </div>
 <ng2-slim-loading-bar></ng2-slim-loading-bar>
