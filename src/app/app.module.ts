@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppMain } from './app.main';
 import { AppVideo } from './app.videodetails';
 import { AppChannel } from './app.channeldetails';
+import { OrderByPipe } from './sort.pipe';
 
 const appRoutes: Routes = [
   { path: 'video', component: AppVideo},
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [AppComponent, AppVideo, AppChannel, AppMain],
+  declarations: [AppComponent, AppVideo, AppChannel, AppMain, OrderByPipe],
   imports: [
     BrowserModule,
     SlimLoadingBarModule.forRoot(),
