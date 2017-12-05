@@ -400,6 +400,10 @@
     margin: 0 auto;
 }
 
+.type_but{
+    width: 90px;
+}
+
 @media (min-width:768px) {
     .search_input{
         width: 650px;
@@ -434,6 +438,11 @@
     .channel_button{
         display: none;
     }
+    .channel_cover{
+        height: 50px;
+        background-size: cover;
+    }  
+
 }
 
 @media (max-width:1024px) {
