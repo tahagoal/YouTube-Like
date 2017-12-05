@@ -45,10 +45,10 @@
           </g>
         </g></svg>
       </div>
-      <div class="for_mobile" style="height: 35px; margin-top: 10px;">
-        <i class="fa fa-youtube-play" aria-hidden="true" style="color: white; font-size: 30px;"></i>
-        <h4 style="display: -webkit-inline-box; color: white; vertical-align: super; margin: 0 auto;">SpongeBob SquarePants</h4>
-        <i class="fa fa-search fl-right mr-20 mt-5" aria-hidden="true" style="color: white; font-size: 20px;"></i>
+      <div class="for_mobile nav_mob">
+        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        <h4>SpongeBob SquarePants</h4>
+        <i class="fa fa-search fl-right mr-20 mt-5" aria-hidden="true"></i>
       </div>
     </div>
     <form class="navbar-form for_desk navbar-left ml-50">
@@ -73,18 +73,18 @@
     </div>
     <div class="col-xs-12">
       <h3>SpongeBob SquarePants</h3>
-      <h5 style="color:#cc181e;"><i class="fa fa-youtube-play" style="font-size: 40px; vertical-align: middle;" aria-hidden="true"></i> SUSBCRIBE <span style="color: gray;">23,993</span></h5>
+      <h5 class="subs_channel"><i class="fa fa-youtube-play" aria-hidden="true"></i> SUSBCRIBE <span>23,993</span></h5>
     </div>
   </div>
 
 
-  <div class="bg-white row" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="bg-white row channel_row">
     <div class="mt-20 col-xs-12 display_row_imco bg-white" *ngFor="let item of search_result">
       <div class="image_view" routerLink="/video" *ngIf = "item.video">
           <img src="{{item.img}}">
           <span class="timing_img">2:02</span>
         </div>
-        <div class="content_view" style="width: 61%;">
+        <div class="content_view wd-60">
           <i class="fa fa-ellipsis-v fl-right" aria-hidden="true"></i>
           <h3>{{item.title}}</h3>
           <p><small>{{item.tiny}}</small></p>

@@ -45,10 +45,10 @@
           </g>
         </g></svg>
       </div>
-      <div class="for_mobile" style="height: 35px; margin-top: 10px;">
-        <i class="fa fa-youtube-play" aria-hidden="true" style="color: white; font-size: 30px;"></i>
-        <h4 style="display: -webkit-inline-box; color: white; vertical-align: super; margin: 0 auto;">YouTube</h4>
-        <i class="fa fa-search fl-right mr-20 mt-5" aria-hidden="true" style="color: white; font-size: 20px;"></i>
+      <div class="for_mobile nav_mob">
+        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        <h4>YouTube</h4>
+        <i class="fa fa-search fl-right mr-20 mt-5" aria-hidden="true"></i>
       </div>
     </div>
     <form class="navbar-form for_desk navbar-left ml-50">
@@ -67,7 +67,7 @@
 <div class="container">
   <div class="row">
   	<div class="bg-white padding_cont">
-  		<div style="width: 100%">
+  		<div class="wd-100">
   			<iframe width="100%" height="450" src="https://www.youtube.com/embed/nD8xp0X5pEk" frameborder="0" allowfullscreen></iframe>
   		</div>
   		<div class="container">
@@ -106,12 +106,12 @@
 	  		</div>
 	  		<div class="row border_about">
   				<div class="col-xs-12 mt-20 mb-20 display_row_imco">
-	  				<div style="width: 48px; height: 48px; border-radius: 50%; margin-right: 15px; overflow: hidden;">
+	  				<div class="img_cont_vid">
 	  					<img id="img" class="style-scope yt-img-shadow" width="48" src="https://yt3.ggpht.com/-z3A0ZYNR99E/AAAAAAAAAAI/AAAAAAAAAAA/gyHKOxhL3Y8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg">
 	  				</div>
 	  				<div>
-	  					<h4 style="margin: 0 auto">Nickalodean</h4>
-	  					<p style="margin: 0 auto">Published on 21 Dec 2014</p>
+	  					<h4 class="m0-at">Nickalodean</h4>
+	  					<p class="m0-at">Published on 21 Dec 2014</p>
 	  				</div>
 	  			</div>
 	  		</div>
@@ -130,8 +130,8 @@
         <div class="image_view" *ngIf = "item.playlist">
           <img src="{{item.img}}">
           <span class="timing_img_playlist">
-            <p class="mt-30" style="font-size: 20px"><b>37</b></p>
-            <p class="mt-5" style="color: white;">
+            <p class="mt-30 ft-20"><b>37</b></p>
+            <p class="mt-5 text-white">
               <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 40%; height: 100%;">
               <g fill="white" class="style-scope yt-icon">
                 <path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z" class="style-scope yt-icon"></path>
@@ -140,10 +140,10 @@
             </p>
           </span>
           <div class="img_hover">
-            <h4 class="mt-50 center" style="color: white">PLAY ALL</h4>
+            <h4 class="mt-50 center text-white">PLAY ALL</h4>
           </div>
         </div>
-        <div class="content_view" style="width: 61%;">
+        <div class="content_view wd-60">
           <h3>{{item.title}}</h3>
           <p><small>{{item.tiny}}</small></p>
           <p>{{item.paragraph}}</p>
